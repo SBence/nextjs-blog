@@ -1,0 +1,18 @@
+@use "../variables" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: $semibold;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(16px);
+  background-color: color-mix(in srgb, var(--background) 75%, transparent);
+  transition: background $animation-duration;
+}

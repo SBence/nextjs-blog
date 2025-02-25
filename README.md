@@ -1,40 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Next.js Blog
 
-## Getting Started
+A modern blog application built with Next.js, featuring server-side rendering, static site generation, and a clean, responsive design.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Server-side rendered blog posts
+- Static site generation with [ISR (Incremental Static Regeneration)](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration)
+- Responsive grid layout for posts
+- Light/dark theme toggle
+- Reading time estimation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **[Next.js](https://nextjs.org/)** - Server-side rendering
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
+- **[SCSS](https://sass-lang.com/) modules** - Component-scoped styling
+- **[`json-server`](https://github.com/typicode/json-server)** - Mock API backend
+- **[Jotai](https://jotai.org/)** - State management
+- **[ESLint](https://eslint.org/)** - Code linting
+- **[Prettier](https://prettier.io/)** - Code formatting
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Getting Started with Development
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Requirements
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Node.js** v23.x
+- **Yarn** v1.x
 
-## Learn More
+1. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```sh
+   yarn
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+2. Run mock API server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```sh
+   yarn server
+   ```
 
-## Deploy on Vercel
+3. Run development server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```sh
+   yarn dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+After running the scripts above, the application is available at [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
+
+### Folders
+
+- `components` - React components
+- `pages` - Next.js pages
+- `styles` - SCSS modules, variables, and global styles
+- `types` - TypeScript type definitions
+- `utils` - Helper functions and utilities
+
+### Project-specific Files
+
+- `db.json` - The data served by the mock API with `json-server`
+- `store.ts` - Jotai store configuration
+
+## Environment Variables
+
+- `API_URL` - The base URL for the API endpoint serving the blog posts
+- `REVALIDATE_TIME` - The time interval (in seconds) for Next.js to revalidate static pages using [ISR (Incremental Static Regeneration)](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration)
+
+## `package.json` Scripts
+
+> [!IMPORTANT]
+> Make sure to run `server` before running `dev`, `build`, or `start`.
+
+- `server` - Run mock API
+- `dev` - Run development server
+- `build` - Build for production
+- `start` - Run production server
+- `lint` - Lint code with ESLint
+- `formatting:check` - Check code formatting with Prettier
+- `formatting:apply` - Format code with Prettier
+
+---
+
+_Design based on: [The Blog - A Web Personal Blog](https://www.figma.com/community/file/1235152009438565697)_

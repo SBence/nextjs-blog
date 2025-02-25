@@ -1,0 +1,20 @@
+@use "../variables" as *;
+
+.posts {
+  display: inline-grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, var(--post-card-width));
+  justify-content: center;
+  max-width: 100%;
+
+  @media (min-width: $breakpoint-desktop) {
+    gap: 32px;
+  }
+}
+
+.sectionHeader {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: $semibold;
+  grid-column: 1 / -1;
+}

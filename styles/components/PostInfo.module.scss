@@ -1,0 +1,6 @@
+@use "../variables" as *;
+
+.info {
+  color: var(--accent);
+  font-weight: $semibold;
+}

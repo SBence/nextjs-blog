@@ -1,0 +1,59 @@
+@use "../variables" as *;
+
+.excerpt {
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--secondary);
+
+  @media (min-width: $breakpoint-tablet) {
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.title {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.image {
+  margin-bottom: 24px;
+  width: var(--post-card-width);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 16px;
+  font-weight: $semibold;
+  color: var(--accent);
+  height: 32px;
+  outline: 2px solid var(--accent);
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 16px;
+  transition:
+    background-color 0.25s,
+    color 0.25s;
+}
+
+.button:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+.container {
+  width: var(--post-card-width);
+}

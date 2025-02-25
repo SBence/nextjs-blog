@@ -1,0 +1,55 @@
+@use "sass:color";
+@use "./variables" as *;
+
+:root {
+  --background: white;
+  --foreground: #1a1a1a;
+  --secondary: #667085;
+  --accent: #{$accent-color};
+  --logo-border: rgba(0, 0, 0, 0.34);
+  --post-card-width: 326px;
+
+  @media (min-width: $breakpoint-tablet) {
+    --post-card-width: 377px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    --post-card-width: 384px;
+  }
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #090d1f;
+  --foreground: white;
+  --secondary: #c0c5d0;
+  --accent: #{color.adjust($accent-color, $lightness: 12.5%)};
+  --logo-border: white;
+}
+
+html,
+body {
+  max-width: 100vw;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    color $animation-duration,
+    background $animation-duration;
+  margin-bottom: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

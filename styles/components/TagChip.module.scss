@@ -1,0 +1,9 @@
+@use "../variables" as *;
+
+.container {
+  border-radius: 16px;
+  padding: 2px 10px;
+  line-height: 20px;
+  font-size: 14px;
+  transition: background-color $animation-duration;
+}

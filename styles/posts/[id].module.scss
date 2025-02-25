@@ -1,0 +1,34 @@
+@use "../variables" as *;
+
+.image {
+  width: 100%;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 1;
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.container {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(auto, $post-width);
+  justify-content: center;
+  margin-left: 32px;
+  margin-right: 32px;
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: var(--post-card-width) $post-width;
+  }
+}
